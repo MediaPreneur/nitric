@@ -49,10 +49,17 @@ message ServerMessage {
   }
 }
 
+message ApiWorkerOptions {
+  // Apply the api level security definition
+  // to this route
+  string security_definition = 1;
+}
+
 message ApiWorker {
   string api = 1;
   string path = 2;
   repeated string methods = 3;
+  ApiWorkerOptions options = 4;
 }
 
 message SubscriptionWorker {
